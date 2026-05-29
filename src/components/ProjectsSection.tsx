@@ -1,12 +1,18 @@
 const projects = [
   {
+    title: "DermSeg - Original Image Segmentation architecture",
+    url: "https://github.com/Divijv8/DermSeg",
+    description:
+      "Designed and implemented a novel image segmentation architecture for skin lesion analysis, achieving a 15% improvement in Dice coefficient over U-Net on the ISIC 2018 dataset. The model incorporates multi-scale feature extraction and attention mechanisms to enhance segmentation accuracy.",
+  },
+  {
     title: "BlockBin — Decentralized File Storage",
     url: "https://github.com/Divijv8/BlockBin",
     description:
       "Built a full-stack decentralized file storage application using React, Solidity, IPFS, Web3.Storage, and Polygon. Reduced storage costs by 60–75% compared to traditional cloud providers while ensuring permanent, distributed file accessibility with 99.9% uptime.",
   },
   {
-    title: "Fake News Detection System",
+    title: "VeriFy - Fake News Detection System",
     url: "https://github.com/Divijv8/Fake-News-Detection",
     description:
       "Developed an AI-powered web application achieving 97% detection accuracy using an LSTM model trained on 280,000+ articles. Integrated Google Gemini API for real-time, human-readable explanations with <3s response time via an interactive Streamlit dashboard.",

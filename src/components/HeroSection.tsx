@@ -16,13 +16,13 @@ const HeroSection = () => {
         <div className="mb-12 md:mb-16 max-w-2xl">
           <div className="text-sm md:text-base leading-relaxed text-muted-foreground tracking-wide space-y-4">
             <p>
-              Hi, I'm Divij Verma — a passionate third-year B.Tech student in Computer Science & Engineering at Jaypee Institute of Information Technology (JIIT), Noida.
+              Hi, I'm Divij Verma — a third-year CSE student at Jaypee Institute of Information Technology, Noida who builds things people actually use.
             </p>
             <p>
-              I build full-stack applications, decentralized systems, and AI-powered tools that solve real problems with clean, efficient code.
+              I build production-grade ML systems, decentralized applications, and AI-integrated tools end-to-end — from architecture to deployment. My work includes an original deep learning architecture for medical image segmentation (0.90 Dice on clinical data, research paper in progress) and a blockchain storage platform with 65 real organic users.
             </p>
             <p>
-              I'm a competitive programmer (LeetCode rating 1800 — top 8% globally, CodeChef 1426) who thrives on fast learning, optimization, and ownership. Beyond code, I've freelanced as a 3D artist in Blender, delivering high-quality renders with 100% client satisfaction.
+              I'm a LeetCode Knight (top 5% globally, rating 1868) and ranked 1867 out of 29,000 in a rated CodeChef contest — which reflects the same obsession with correctness and efficiency I bring to every project I ship.
             </p>
           </div>
         </div>

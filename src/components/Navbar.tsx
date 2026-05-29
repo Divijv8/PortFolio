@@ -146,7 +146,7 @@ const Navbar = () => {
               <span className="text-sm tracking-wide">+91 73008 06953</span>
             </a>
             <a
-              href="https://drive.google.com/file/d/145OQpGEohPh3Sp8NmfddGgpBsuADZFsQ/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1E7dmuyaDdvWxLI6NEV-m9ZGPF7x139zU/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 px-4 py-3 rounded-lg border border-border hover:bg-secondary transition-colors text-foreground"
