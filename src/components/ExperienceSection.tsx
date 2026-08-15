@@ -20,7 +20,7 @@ const experiences: ExperienceItem[] = [
     company: "DRDO (Defence Research & Development Organisation)",
     location: "Agra, India",
     period: "May – Jul 2026",
-    project: "Gate Entry & Pass Generation System",
+    project: "GateSync - Gate Entry & Pass Generation System",
     bullets: [
       "Designed and developed an automated Gate Entry/Pass Generation System, reducing manual processing time by ~70%",
       "Built RESTful APIs handling 100+ daily entries/exits with robust authentication and role-based access",
