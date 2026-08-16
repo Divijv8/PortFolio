@@ -2,7 +2,7 @@ import ScrollReveal from "@/components/animations/ScrollReveal";
 import AnimatedText from "@/components/animations/AnimatedText";
 import AnimatedCounter from "@/components/animations/AnimatedCounter";
 import { motion } from "framer-motion";
-import { Trophy } from "lucide-react";
+import { Trophy, ExternalLink } from "lucide-react";
 
 interface Achievement {
   icon: string;
@@ -10,6 +10,7 @@ interface Achievement {
   subtitle: string;
   stat?: { value: number; suffix?: string; prefix?: string };
   highlight?: string;
+  link?: { url: string; label: string };
 }
 
 const achievements: Achievement[] = [
@@ -31,6 +32,7 @@ const achievements: Achievement[] = [
     title: "IC3 2026",
     subtitle: "International research conference",
     highlight: "Paper Accepted",
+    link: { url: "https://drive.google.com/file/d/1bFGGbStZ5AUErSv1kLM3y4YkIZKQ5jLH/view?usp=sharing", label: "View Paper" },
   },
 ];
 
@@ -97,6 +99,19 @@ const AchievementsSection = () => {
                   <p className="text-xs text-accent font-semibold mt-2 tracking-wide uppercase">
                     {ach.highlight}
                   </p>
+                )}
+
+                {/* Link */}
+                {ach.link && (
+                  <a
+                    href={ach.link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 mt-4 px-4 py-2 rounded-lg text-xs font-semibold tracking-wide uppercase text-accent border border-accent/30 bg-accent/5 hover:bg-accent/15 hover:border-accent/60 hover:shadow-[0_0_16px_hsl(var(--accent)/0.2)] transition-all duration-300 group/link"
+                  >
+                    {ach.link.label}
+                    <ExternalLink className="w-3 h-3 transition-transform duration-300 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
+                  </a>
                 )}
               </motion.div>
             </ScrollReveal>

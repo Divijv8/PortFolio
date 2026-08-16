@@ -8,7 +8,6 @@ const navLinks = [
   { id: "experience", label: "Experience" },
   { id: "projects", label: "Projects" },
   { id: "achievements", label: "Achievements" },
-  { id: "contact", label: "Contact" },
 ];
 
 const Navbar = () => {
@@ -84,8 +83,8 @@ const Navbar = () => {
                   key={link.id}
                   href={`#${link.id}`}
                   className={`relative px-3.5 py-2 text-xs tracking-[0.08em] uppercase font-medium transition-colors duration-300 rounded-lg ${activeSection === link.id
-                      ? "text-accent"
-                      : "text-muted-foreground hover:text-foreground"
+                    ? "text-accent"
+                    : "text-muted-foreground hover:text-foreground"
                     }`}
                 >
                   {link.label}
@@ -192,8 +191,8 @@ const Navbar = () => {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: i * 0.05 }}
                       className={`block w-full text-left px-4 py-3 rounded-xl text-sm tracking-[0.1em] uppercase font-medium transition-colors ${activeSection === link.id
-                          ? "text-accent bg-accent/10"
-                          : "text-foreground hover:bg-secondary/50"
+                        ? "text-accent bg-accent/10"
+                        : "text-foreground hover:bg-secondary/50"
                         }`}
                     >
                       {link.label}
