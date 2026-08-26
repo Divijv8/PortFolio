@@ -22,6 +22,13 @@ const projects: Project[] = [
     badge: "IC3 2026 Accepted",
   },
   {
+    title: "Oracle ERP Asset Report Analyser",
+    url: "https://divijv8-oracle-asset-report.hf.space/",
+    description:
+      "Full-stack AI-powered document analysis application for Oracle ERP Asset Additions Reports using Python, Gradio, regex-based state-machine parsing, vLLM, and Mistral-7B. Automated PDF extraction and validation by reconciling parsed report totals against computed row sums, with formatted Excel export. Deployed a local Mistral-7B model via vLLM on Hugging Face Spaces ZeroGPU for executive summaries and multi-turn Q&A.",
+    tags: ["Python", "Gradio", "vLLM", "Mistral-7B", "Hugging Face Spaces"],
+  },
+  {
     title: "BlockBin",
     url: "https://github.com/Divijv8/BlockBin",
     description:
