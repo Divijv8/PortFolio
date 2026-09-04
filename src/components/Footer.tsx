@@ -18,7 +18,7 @@ const socialLinks = [
   {
     icon: FileText,
     label: "Resume",
-    href: "https://drive.google.com/file/d/1LeHo9nAHcNRIymjPe8GXD3VNg4jo7za0/view?usp=sharing",
+    href: "https://drive.google.com/file/d/1luJUjxghQVv27D5gsaapglYRzPYsaBnx/view?usp=sharing",
   },
 ];
 
