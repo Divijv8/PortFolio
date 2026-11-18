@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
 
+@property --portrait-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -241,6 +247,131 @@
   }
   .timeline-dot-filled {
     background: hsl(var(--accent));
+  }
+
+  /* Hero portrait: squircle photo (static) with slowly rocking outline frames */
+  .portrait-wrap {
+    position: relative;
+    aspect-ratio: 1 / 1.06;
+  }
+  .portrait-glow {
+    position: absolute;
+    inset: 6%;
+    background: var(--gradient-accent);
+    filter: blur(60px);
+    opacity: 0.25;
+    border-radius: 38%;
+    animation: portrait-breathe 9s ease-in-out infinite;
+    pointer-events: none;
+  }
+  .portrait-photo {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    border-radius: 34% / 32%;
+    background: hsl(var(--card));
+    box-shadow: 0 24px 60px -24px hsl(var(--accent) / 0.45);
+    z-index: 1;
+  }
+  .portrait-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 22%;
+    transform: scale(1.04);
+    transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .portrait-wrap:hover .portrait-photo img {
+    transform: scale(1.09);
+  }
+
+  /* Outline frames */
+  .portrait-frame {
+    position: absolute;
+    border-radius: 36% / 34%;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .portrait-frame-main {
+    inset: -18px;
+    padding: 2px;
+    background: conic-gradient(
+      from var(--portrait-angle),
+      hsl(250 90% 62%),
+      hsl(280 80% 60%),
+      hsl(320 80% 55%),
+      hsl(320 80% 55% / 0.15) 40%,
+      hsl(250 90% 62% / 0.15) 75%,
+      hsl(250 90% 62%)
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation:
+      portrait-rotate 14s linear infinite,
+      portrait-rock 11s ease-in-out infinite;
+  }
+  .portrait-frame-soft {
+    inset: -32px;
+    border: 1px solid hsl(var(--accent) / 0.28);
+    animation: portrait-rock-rev 15s ease-in-out infinite;
+  }
+
+  .portrait-badge {
+    position: absolute;
+    left: -46px;
+    bottom: 22px;
+    width: 108px;
+    height: 108px;
+    border-radius: 9999px;
+    background: hsl(var(--background));
+    border: 1px solid hsl(var(--border));
+    box-shadow: 0 10px 30px -12px hsl(var(--accent) / 0.35);
+    display: grid;
+    place-items: center;
+    z-index: 3;
+  }
+  .portrait-badge svg {
+    position: absolute;
+    inset: 0;
+    animation: portrait-spin 24s linear infinite;
+  }
+  .portrait-badge-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 9999px;
+    background: var(--gradient-accent);
+    box-shadow: 0 0 14px hsl(var(--accent) / 0.7);
+  }
+
+  @keyframes portrait-rotate {
+    to { --portrait-angle: 360deg; }
+  }
+  @keyframes portrait-spin {
+    to { transform: rotate(360deg); }
+  }
+  @keyframes portrait-rock {
+    0%, 100% { transform: rotate(-4deg); }
+    50%      { transform: rotate(5deg); }
+  }
+  @keyframes portrait-rock-rev {
+    0%, 100% { transform: rotate(6deg); }
+    50%      { transform: rotate(-5deg); }
+  }
+  @keyframes portrait-breathe {
+    0%, 100% { transform: scale(1); opacity: 0.2; }
+    50%      { transform: scale(1.06); opacity: 0.32; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .portrait-glow,
+    .portrait-frame-main,
+    .portrait-frame-soft,
+    .portrait-badge svg {
+      animation: none;
+    }
+    .portrait-frame-main { transform: rotate(-4deg); }
+    .portrait-frame-soft { transform: rotate(5deg); }
   }
 }
 
