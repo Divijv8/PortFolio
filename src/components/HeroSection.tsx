@@ -1,6 +1,7 @@
 import portraitImg from "@/assets/portrait.jpg";
 import AnimatedText from "@/components/animations/AnimatedText";
 import ScrollReveal from "@/components/animations/ScrollReveal";
+import { ArrowDown } from "lucide-react";
 
 const BADGE_TEXT = "SWE • ML ENGINEER • JIIT NOIDA • ";
 
@@ -60,6 +61,25 @@ const HeroSection = () => {
                 </ScrollReveal>
               </div>
             </div>
+
+            <ScrollReveal delay={0.9}>
+              <div className="flex flex-wrap items-center gap-3 mb-10 md:mb-12">
+                <a
+                  href="#projects"
+                  className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold text-white shadow-lg shadow-accent/25 transition-all duration-300 hover:shadow-accent/40 hover:-translate-y-0.5"
+                  style={{ background: "var(--gradient-accent)" }}
+                >
+                  View my work
+                  <ArrowDown className="w-4 h-4 transition-transform duration-300 group-hover:translate-y-0.5" />
+                </a>
+                <a
+                  href="#contact"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold text-foreground glass hover:border-accent/40 transition-all duration-300 hover:-translate-y-0.5"
+                >
+                  Get in touch
+                </a>
+              </div>
+            </ScrollReveal>
 
             <ScrollReveal delay={0.3}>
               <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 max-w-xl">

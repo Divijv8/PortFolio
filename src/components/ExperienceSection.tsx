@@ -1,8 +1,9 @@
 import ScrollReveal from "@/components/animations/ScrollReveal";
-import AnimatedText from "@/components/animations/AnimatedText";
+import SectionHeading from "@/components/SectionHeading";
+import { trackSpotlight } from "@/lib/utils";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { Briefcase, Calendar, MapPin } from "lucide-react";
+import { Calendar, MapPin } from "lucide-react";
 
 interface ExperienceItem {
   role: string;
@@ -45,20 +46,7 @@ const ExperienceSection = () => {
       ref={containerRef}
     >
       <div className="section-container">
-        <ScrollReveal>
-          <div className="flex items-center gap-3 mb-4">
-            <Briefcase className="w-5 h-5 text-muted-foreground" />
-            <span className="text-xs md:text-sm tracking-[0.25em] uppercase text-muted-foreground font-medium">
-              Experience
-            </span>
-          </div>
-        </ScrollReveal>
-
-        <AnimatedText
-          text="Where I've Worked"
-          as="h2"
-          className="text-3xl md:text-5xl font-bold text-foreground mb-16"
-        />
+        <SectionHeading index="01" eyebrow="Experience" title="Where I've Worked" />
 
         {/* Timeline */}
         <div className="relative pl-8 md:pl-12">
@@ -75,7 +63,8 @@ const ExperienceSection = () => {
               <div className="timeline-dot timeline-dot-filled" />
 
               <ScrollReveal delay={0.2}>
-                <div className="glass rounded-xl p-6 md:p-8 glow-hover">
+                <div className="spotlight-card relative overflow-hidden rounded-2xl p-6 md:p-8" onMouseMove={trackSpotlight}>
+                  <div className="relative z-[1]">
                   {/* Header */}
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-4">
                     <div>
@@ -122,6 +111,7 @@ const ExperienceSection = () => {
                         {tag}
                       </span>
                     ))}
+                  </div>
                   </div>
                 </div>
               </ScrollReveal>

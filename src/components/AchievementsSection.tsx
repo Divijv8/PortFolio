@@ -1,8 +1,8 @@
 import ScrollReveal from "@/components/animations/ScrollReveal";
-import AnimatedText from "@/components/animations/AnimatedText";
+import SectionHeading from "@/components/SectionHeading";
 import AnimatedCounter from "@/components/animations/AnimatedCounter";
 import { motion } from "framer-motion";
-import { Trophy, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 
 interface Achievement {
   icon: string;
@@ -40,20 +40,7 @@ const AchievementsSection = () => {
   return (
     <section id="achievements" className="section-padding scroll-mt-20">
       <div className="section-container">
-        <ScrollReveal>
-          <div className="flex items-center gap-3 mb-4">
-            <Trophy className="w-5 h-5 text-muted-foreground" />
-            <span className="text-xs md:text-sm tracking-[0.25em] uppercase text-muted-foreground font-medium">
-              Achievements
-            </span>
-          </div>
-        </ScrollReveal>
-
-        <AnimatedText
-          text="Milestones & Recognition"
-          as="h2"
-          className="text-3xl md:text-5xl font-bold text-foreground mb-16"
-        />
+        <SectionHeading index="03" eyebrow="Achievements" title="Milestones & Recognition" />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {achievements.map((ach, i) => (
@@ -61,7 +48,7 @@ const AchievementsSection = () => {
               <motion.div
                 whileHover={{ scale: 1.03, y: -4 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="glass rounded-xl p-6 text-center glow-hover group cursor-default h-full"
+                className="glass rounded-2xl p-6 text-center glow-hover group cursor-default h-full"
               >
                 {/* Icon */}
                 <motion.div
